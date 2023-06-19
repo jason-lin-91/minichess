@@ -44,7 +44,7 @@ void write_valid_spot(std::ofstream& fout) {
   while(true) {
     // Choose a random spot.
     
-    auto move = Alphabeta::get_move(root, 2, root->player);
+    auto move = Alphabeta::get_move(root, 4, root->player);
     fout << move.first.first << " " << move.first.second << " "\
          << move.second.first << " " << move.second.second << std::endl;
     

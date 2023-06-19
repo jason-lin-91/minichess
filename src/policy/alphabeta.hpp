@@ -11,4 +11,4 @@ public:
   static Move get_move(State *state, int depth,int player);
   
 };
-int alpha_beta(State* state,int depth,bool is_max_player,int who);
+int alpha_beta(State* state,int depth,bool is_max_player,int who,int alpha,int beta);
