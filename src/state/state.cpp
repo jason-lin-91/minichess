@@ -26,70 +26,70 @@ double queen_value_table[2][BOARD_H][BOARD_W] = {{
 double pawn_value_table[2][BOARD_H][BOARD_W] = {{
       //white
       {7, 7, 7, 7, 7},
-      {1.5, 1.5, 1.5, 1.5, 1.5},
-      {1.2, 1.2, 1.2, 1.2, 1.2},
-      {1.1, 1.1, 1.1, 1.1, 1.1},
-      {1, 1, 1, 1, 1},
+      {1.5, 2.5, 1.5, 1, 1},
+      {1.2, 2.5, 1.2, 1, 1},
+      {1.1, 2.5, 1.1, 1, 1},
+      {1, 1, 1, 1.8, 2.5},
       {0, 0, 0, 0, 0},
     }, {
       //black
       {0, 0, 0, 0, 0},
-      {1, 1, 1, 1, 1},
-      {1.1, 1.1, 1.1, 1.1, 1.1},
-      {1.2, 1.2, 1.2, 1.2, 1.2},
-      {1.5, 1.5, 1.5, 1.5, 1.5},
+      {2.5, 1.8, 1, 1, 1},
+      {1, 1, 1.2, 1.5, 1.2},
+      {1, 1, 1.2, 1.5, 1.2},
+      {1, 1, 1.5, 2.5, 1.5},
       {7 ,7 ,7, 7, 7},
     }};
 double bishop_value_table[2][BOARD_H][BOARD_W] = {{
       //white
-      {0, 0, 0, 0, 0},
-      {0, 0, 0, 0, 0},
-      {0, 0, 0, 0, 0},
-      {0, 0, 0, 0, 0},
-      {1, 1, 1, 1, 1},
-      {2, 3, 4, 5, 6},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
+      {3, 3.5, 3.5, 3.5, 3},
+      {3.2, 3.2, 3.4, 3.2, 3.2},
+      {3, 3, 3, 3, 3},
+      {3, 3, 3, 3, 3},
     }, {
       //black
-      {6, 5, 4, 3, 2},
-      {1, 1, 1, 1, 1},
-      {0, 0, 0, 0, 0},
-      {0, 0, 0, 0, 0},
-      {0, 0, 0, 0, 0},
-      {0, 0, 0, 0, 0},
+      {3, 3, 3, 3, 3},
+      {3, 3, 3, 3, 3},
+      {3.2, 3.2, 3.4, 3.2, 3.2},
+      {3, 3.5, 3.5, 3.5, 3},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
     }};
 double rook_value_table[2][BOARD_H][BOARD_W] = {{
       //white
-      {5, 5, 5, 5, 5},
-      {5, 5, 5, 5, 5},
-      {5, 5.5, 5.5, 5.5, 5},
-      {5, 5.5, 5.5, 5.5, 5},
+      {5.3, 5.3, 5.3, 5.3, 5.3},
+      {5.3, 5.3, 5.3, 5.3, 5.3},
+      {5, 5.3, 5.3, 5.3, 5},
+      {5, 5.3, 5.3, 5.3, 5},
       {5, 5, 5, 5, 5},
       {5, 5, 5, 5, 5},
     }, {
       //black
       {5, 5, 5, 5, 5},
       {5, 5, 5, 5, 5},
-      {5, 5.5, 5.5, 5.5, 5},
-      {5, 5.5, 5.5, 5.5, 5},
-      {5, 5, 5, 5, 5},
-      {5, 5, 5, 5, 5},
+      {5, 5.3, 5.3, 5.3, 5},
+      {5, 5.3, 5.3, 5.3, 5},
+      {5.3, 5.3, 5.3, 5.3, 5.3},
+      {5.3, 5.3, 5.3, 5.3, 5.3},
     }};
 double horse_value_table[2][BOARD_H][BOARD_W] = {{
       //white
-      {3.3, 3.3, 3.3, 3.3, 3.3},
-      {3.3, 3.3, 3.3, 3.3, 3.3},
-      {3.3, 3.3, 3.3, 3.3, 3.3},
-      {3, 3, 3.3, 3, 3},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
+      {3.2, 3, 3.5, 3, 3.2},
       {3, 3, 3, 3, 3},
       {3, 3, 3, 3, 3},
     }, {
       //black
       {3, 3, 3, 3, 3},
       {3, 3, 3, 3, 3},
-      {3, 3, 3.3, 3, 3},
-      {3.3, 3.3, 3.3, 3.3, 3.3},
-      {3.3, 3.3, 3.3, 3.3, 3.3},
-      {3.3, 3.3, 3.3, 3.3, 3.3},
+      {3.2, 3, 3.5, 3, 3.2},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
+      {3.5, 3.5, 3.5, 3.5, 3.5},
     }};
 /**
  * @brief evaluate the state
@@ -98,15 +98,14 @@ double horse_value_table[2][BOARD_H][BOARD_W] = {{
  */
 int State::evaluate(int who){
   // [TODO] design your own evaluation function
-  int total;
-  int w_value=0;
-  int b_value=0;
+  double total;
+  double w_value=0;
+  double b_value=0;
     for (int i=0; i<BOARD_H; i++) {
       for (int j=0; j<BOARD_W; j++) {
         if(this->board.board[0][i][j]==1)
         {
-          
-            w_value+=pawn_value_table[0][i][j];
+          w_value+=pawn_value_table[0][i][j];
         }
           
         if(this->board.board[0][i][j]==2)
@@ -114,17 +113,17 @@ int State::evaluate(int who){
         if(this->board.board[0][i][j]==3)
           w_value+=horse_value_table[0][i][j];
         if(this->board.board[0][i][j]==4)
-          w_value+=3;
+          w_value+=bishop_value_table[0][i][j];
         if(this->board.board[0][i][j]==5)
           w_value+=9;
         if(this->board.board[0][i][j]==6)
         {
           if(this->board.board[0][i-1][j]==1)
-            w_value+=1.2;
-          if(this->board.board[0][i-1][j+1]==1)
-            w_value+=1;
+            w_value+=2;
           if(this->board.board[0][i-1][j-1]==1)
-            w_value+=1;
+            w_value+=1.2;
+          if(i==5&&j==4)
+            w_value+=5;
           w_value+=1000;
         }
          
@@ -144,17 +143,17 @@ int State::evaluate(int who){
         if(this->board.board[1][i][j]==3)
           b_value+=horse_value_table[1][i][j];
         if(this->board.board[1][i][j]==4)
-          b_value+=3;
+          b_value+=bishop_value_table[1][i][j];
         if(this->board.board[1][i][j]==5)
           b_value+=9;
         if(this->board.board[1][i][j]==6)
         {
           if(this->board.board[0][i+1][j]==1)
-            b_value+=1.2;
+            b_value+=2;
           if(this->board.board[0][i+1][j+1]==1)
             b_value+=1;
-          if(this->board.board[0][i+1][j-1]==1)
-            b_value+=1;
+          if(i==0&&j==0)
+            b_value+=5;
           b_value+=1000;  
         }
           
