@@ -3,8 +3,8 @@
 
 #include "../config.hpp"
 #include "../state/state.hpp"
-#include "../policy/random.hpp"
-using namespace std;
+#include "../policy/minimax.hpp"
+
 
 State* root;
 
@@ -39,16 +39,18 @@ void read_board(std::ifstream& fin) {
  * @param fout 
  */
 void write_valid_spot(std::ofstream& fout) {
+
   // Keep updating the output until getting killed.
   while(true) {
     // Choose a random spot.
-    auto move = Random::get_move(root, 1);
+    
+    auto move = Minimax::get_move(root, 1, root->player);
     fout << move.first.first << " " << move.first.second << " "\
          << move.second.first << " " << move.second.second << std::endl;
     
-    
     // Remember to flush the output to ensure the last action is written to file.
     fout.flush();
+
     //break;
   }
 }
@@ -67,7 +69,6 @@ int main(int, char** argv) {
 
   read_board(fin);
   write_valid_spot(fout);
-  
 
   fin.close();
   fout.close();

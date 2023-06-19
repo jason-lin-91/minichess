@@ -13,7 +13,53 @@
  */
 int State::evaluate(){
   // [TODO] design your own evaluation function
-  return 0;
+  int w_value=0;
+  int b_value=0;
+    for (int i=0; i<BOARD_H; i++) {
+      for (int j=0; j<BOARD_W; j++) {
+        if(this->board.board[0][i][j]==1)
+        {
+            w_value+=1;
+        }
+          
+        if(this->board.board[0][i][j]==2)
+          w_value+=5;
+        if(this->board.board[0][i][j]==3)
+          w_value+=3;
+        if(this->board.board[0][i][j]==4)
+          w_value+=3;
+        if(this->board.board[0][i][j]==5)
+          w_value+=9;
+        if(this->board.board[0][i][j]==6)
+          w_value+=1000;
+        
+      }
+      
+    }
+    for (int i=0; i<BOARD_H; i++) {
+      for (int j=0; j<BOARD_W; j++) {
+        if(this->board.board[1][i][j]==1)
+        {
+          
+            b_value+=1;
+        }
+        if(this->board.board[1][i][j]==2)
+          b_value+=5;
+        if(this->board.board[1][i][j]==3)
+          b_value+=3;
+        if(this->board.board[1][i][j]==4)
+          b_value+=3;
+        if(this->board.board[1][i][j]==5)
+          b_value+=9;
+        if(this->board.board[1][i][j]==6)
+          b_value+=1000;
+        
+      }
+      
+    }
+    int total=w_value-b_value;
+    return total;
+  
 }
 
 

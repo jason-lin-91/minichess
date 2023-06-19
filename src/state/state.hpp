@@ -53,6 +53,8 @@ class State{
     State(Board board): board(board){};
     State(Board board, int player): board(board), player(player){};
     
+    /// @brief 
+    /// @return 
     int evaluate();
     State* next_state(Move move);
     void get_legal_actions();
