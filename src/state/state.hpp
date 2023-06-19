@@ -55,7 +55,7 @@ class State{
     
     /// @brief 
     /// @return 
-    int evaluate();
+    int evaluate(int who);
     State* next_state(Move move);
     void get_legal_actions();
     std::string encode_output();

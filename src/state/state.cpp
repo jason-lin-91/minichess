@@ -11,8 +11,9 @@
  * 
  * @return int 
  */
-int State::evaluate(){
+int State::evaluate(int who){
   // [TODO] design your own evaluation function
+  int total;
   int w_value=0;
   int b_value=0;
     for (int i=0; i<BOARD_H; i++) {
@@ -31,7 +32,10 @@ int State::evaluate(){
         if(this->board.board[0][i][j]==5)
           w_value+=9;
         if(this->board.board[0][i][j]==6)
-          w_value+=1000;
+        {
+           w_value+=1000;
+        }
+         
         
       }
       
@@ -57,7 +61,10 @@ int State::evaluate(){
       }
       
     }
-    int total=w_value-b_value;
+    if(who==0)
+      total=w_value-b_value;
+    else 
+      total=b_value-w_value;
     return total;
   
 }

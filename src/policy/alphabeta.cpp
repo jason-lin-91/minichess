@@ -1,7 +1,7 @@
 #include <cstdlib>
 
 #include "../state/state.hpp"
-#include "./minimax.hpp"
+#include "./alphabeta.hpp"
 
 
 /**
@@ -11,19 +11,20 @@
  * @param depth You may need this for other policy
  * @return Move 
  */
-Move Minimax::get_move(State *state, int depth,int player){
+Move Alphabeta::get_move(State *state, int depth,int player){
   if(!state->legal_actions.size())
     state->get_legal_actions();
     
   auto actions = state->legal_actions;
   int last_value=INT_MIN;
+
   Move best_move;
   for(auto action:actions)
   {
     State* nextstate=state->next_state(action); 
     
     
-    int value= Mini_max(nextstate,depth,false,player);
+    int value= alpha_beta(nextstate,depth,false,player);
     if (value > last_value) {
         last_value = value;
         best_move=action;
@@ -35,7 +36,7 @@ Move Minimax::get_move(State *state, int depth,int player){
   return best_move;
   
 }
-int Mini_max(State* state,int depth,bool is_max_player,int who)
+int alpha_beta(State* state,int depth,bool is_max_player,int who)
 {
     if (depth==0||state->legal_actions.size()==0)
       return state->evaluate(who);
@@ -47,7 +48,7 @@ int Mini_max(State* state,int depth,bool is_max_player,int who)
       for(auto action:actions)
       {
         State* nextstate=state->next_state(action);
-        int eval=Mini_max(nextstate,depth-1,false,who);
+        int eval=alpha_beta(nextstate,depth-1,false,who);
         max_value=std::max(max_value,eval);
       }
         return max_value;
@@ -59,7 +60,7 @@ int Mini_max(State* state,int depth,bool is_max_player,int who)
       for(auto action:actions)
       {
         State* nextstate=state->next_state(action);
-        int eval=Mini_max(nextstate,depth-1,true,who);
+        int eval=alpha_beta(nextstate,depth-1,true,who);
         min_value=std::min(min_value,eval);
       }
       return min_value;
